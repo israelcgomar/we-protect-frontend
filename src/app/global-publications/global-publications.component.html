@@ -1,0 +1,18 @@
+<div class="input-group">
+    <div class="input-group-prepend"><button class="btn"><span class="input-group-text">Generar reporte</span></button></div><input class="form-control" type="text" />
+    <div class="input-group-append"><button class="btn"(click)="postNews()"><span class="input-group-text">¿Qué esta pasando?  </span></button></div>
+</div>
+<div class="card mt-3"*ngFor="let i of data2">
+    <div class="card-body">
+      <h4 class="card-title">{{i.title}}</h4>
+      <img class="img-user-min" src="../../assets/img/user1.png" alt="">
+      <h6 class="card-subtitle mb-2 text-muted">{{i.updated_at}}</h6>
+      <p class="card-text mb-2">
+        {{i.description}}
+      </p>
+      <h6 class="card-subtitle mb-4 text-muted">Gustavo A. Madero</h6>
+      <a href="#!" class="card-link">Ver más..</a>
+      <a href="#!" class="card-link">Suscribirse</a>
+      <a href="#!" class="card-link">Comentar</a>
+    </div>
+</div>

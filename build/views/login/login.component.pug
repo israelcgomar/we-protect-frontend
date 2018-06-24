@@ -1,0 +1,12 @@
+.form-login
+	h4 Iniciar sesión
+	.recover.account.mt-4
+		a ¿Olvidaste tu contraseña?
+	form.form-group.mt-4(#loginForm="ngForm" )
+		.form-group
+			input.form-control(autocomplete="off",placeholder="Correo electronico",name="username",required="required")
+		.form-group
+			input.form-control(autocomplete="off" type='password' placeholder="Contraseña",name="password",required="required",minlength="6",maxlength="15")
+		button.btn.btn-warning(routerLink="/home") Iniciar sesión 
+	.create-account
+		a(routerLink="/registro") ¿No tienes una cuenta? #[span Cree una.]

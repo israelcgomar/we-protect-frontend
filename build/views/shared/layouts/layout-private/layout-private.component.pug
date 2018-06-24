@@ -1,0 +1,27 @@
+.content-admin
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
+    a.navbar-brand.brand-img()
+      img(src="../../../../../assets/img/logo.svg", alt="")
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item.active
+          a.nav-link(routerLink="/home")
+            | Inicio
+            span.sr-only (current)
+        li.nav-item
+          a.nav-link(routerLink="zona-interes") Zona de interes
+        li.nav-item
+          a.nav-link(routerLink="perfil") Mi bitacora de reportes
+      form.form-inline.my-2.my-lg-0
+        input.form-control.mr-sm-2(type='search', placeholder='Buscar...', aria-label='Search')
+        button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Buscar
+  .content-down
+    .section.section-nav
+      .content-img
+        img.img-user(src="../../../../../assets/img/user.jpg", alt="")
+        p.user-name Mario Alberto
+        button.btn.btn-primary(routerLink="editar-informacion") Configuración
+          i.fa.fa-edit.ml-2
+    .content-router
+      .container-router
+        router-outlet
