@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  base_uri: 'http://10.242.23.38:8001/api/v1/'
+  base_uri: 'http://159.89.155.107:8001/api/v1/'
 };
 
 

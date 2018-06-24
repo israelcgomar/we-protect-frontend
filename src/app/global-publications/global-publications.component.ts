@@ -16,6 +16,11 @@ export class GlobalPublicationsComponent implements OnInit {
   public modelPost:User;
   public data;
   public data2 = [];
+  public titulo;
+  public description;
+
+  public comment;
+  public comments = [];
 
   constructor(
     private globalPublicationsService:GlobalPublicationsService
@@ -25,11 +30,12 @@ export class GlobalPublicationsComponent implements OnInit {
     this.modelPost = new User();
 
     this.getInfo();
+    this.getComments();
   }
 
   public setData() {
-    this.modelPost.title = 'ASALTO';
-    this.modelPost.description = 'AMigos cuidado andan asaltando por estas calles de madero';
+    this.modelPost.title = this.titulo;
+    this.modelPost.description = this.description;
     this.modelPost.length = '121212.1';
     this.modelPost.latitude = '121212.2';
     this.modelPost.lugar = 'Avenida A. Madero No. 45';
@@ -54,7 +60,20 @@ export class GlobalPublicationsComponent implements OnInit {
       .subscribe( response => {
         this.data = response;
         this.data2 = this.data.post;
+        console.log(this.data2);
         
+     },
+     error => {
+      console.log('error');
+     } 
+    );
+  }
+  public getComments() {
+    this.globalPublicationsService.getComents()
+      .subscribe( response => {
+        this.comment = response;
+        this.comments = this.comment.comments;
+        console.log(this.comments);
      },
      error => {
       console.log('error');

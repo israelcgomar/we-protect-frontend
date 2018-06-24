@@ -26,6 +26,9 @@ export class GlobalPublicationsService {
   public getData(){
     return this.http.get(this.baseUrl+'post');
   }
+  public getComents(){
+    return this.http.get(this.baseUrl+'comment');
+  }
   
   private extractData( res: Response ){
     let body = res.json();

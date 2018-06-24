@@ -1,6 +1,9 @@
-<div class="input-group">
-    <div class="input-group-prepend"><button class="btn"><span class="input-group-text">Generar reporte</span></button></div><input class="form-control" type="text" />
-    <div class="input-group-append"><button class="btn"(click)="postNews()"><span class="input-group-text">¿Qué esta pasando?  </span></button></div>
+<div class="form-group">
+    <label class="mb-1 mt-1">Titulo</label>
+    <input class="form-control form-control-sm mb-1 mt-1" type="text" placeholder="...">
+    <label class="mb-1 mt-1">Descripción</label>
+    <input class="form-control form-control-sm mb-1 mt-1" type="text" placeholder="...">
+    <button class="btn btn-primary  mt-2">Enviar Reporte</button>
 </div>
 <div class="card mt-3"*ngFor="let i of data2">
     <div class="card-body">
@@ -11,8 +14,21 @@
         {{i.description}}
       </p>
       <h6 class="card-subtitle mb-4 text-muted">Gustavo A. Madero</h6>
-      <a href="#!" class="card-link">Ver más..</a>
+      <!-- <a href="#!" class="card-link">Ver más..</a> -->
       <a href="#!" class="card-link">Suscribirse</a>
-      <a href="#!" class="card-link">Comentar</a>
+      <a href="#!" class="card-link">Comentar</a>      
     </div>
+    <ul class="list-group" *ngFor="let j of comments">
+        <div class="list-group-item list-group-item-primary" >
+          <small>{{j.name}}:</small>
+          <p>{{j.comment}}</p>
+        </div>
+    </ul>
+    <div class="input-group mt-2 mb-2">
+        <input type="text" class="form-control" placeholder="Comentario..." aria-label="" aria-describedby="basic-addon1">
+        <div class="input-group-append">
+          <button class="btn btn-success" type="button">Enviar</button>
+        </div>
+    </div>
+    
 </div>
